@@ -1,0 +1,9 @@
+<h1>Gallery(post#index)</h1>
+<% @posts.each do |post| %>
+  <p>
+    <%= post.description %>
+    </p>
+    <p>
+    <%= image_tag(post.image ) %>
+  </p>
+<% end %>

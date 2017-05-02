@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MiniFlikr</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%#= @current_user.to_json %>
+
+    <!-- <% if @current_user %>
+      <h1>
+        You are logged in as: <%= @current_user.email %>
+      </h1>
+    <% end %> -->
+
+    <%= flash[:error] %>
+
+    <nav>
+      <% if @current_user %>
+        <%= link_to "Log Out", "/logout", method: :delete %>
+        <%= link_to @current_user.email, user_path(@current_user) %>
+        <%= link_to "Edit Profile", edit_user_path(@current_user) %>
+      <% else %>
+        <%= link_to "Login", "/login" %>
+        <%= link_to "Sign Up", "/users/new" %>
+      <% end %>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>
