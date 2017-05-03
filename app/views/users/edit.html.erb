@@ -1,2 +1,16 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
+<h3>Update your details</h3>
+
+<%= form_for @user, url: "/users/#{@user.id}" do |f| %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+</p>
+<%= f.label :email %>
+<%= f.text_field :email, :readonly => true %>
+</p>
+<%= f.label :password %>
+<%= f.password_field :password, required: true %>
+</p>
+<%= f.submit %>
+<% end %>

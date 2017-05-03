@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def show
     #@post = Post.first
-    #@post = Post.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 
   def create
@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find_by(id: params["id"])
   end
 
   private

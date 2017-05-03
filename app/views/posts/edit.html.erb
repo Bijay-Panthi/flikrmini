@@ -1,2 +1,16 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit post </h1>
+
+<%= form_for @post do, url: "/posts/#{@post.id}" |f| %>
+<p>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+</p>
+
+<p>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</p>
+
+<%= f.submit %>
+
+<% end %>
