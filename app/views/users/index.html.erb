@@ -1,4 +1,9 @@
-<h1>Users#index</h1>
 
 
- <p>Users Post</p><%=User.first.posts%>
+
+ <p><%= @user.name %> post </p>
+
+ <#% @user.posts.each do |post|%>
+   <#%= post.description %>
+ <#% end %>
+ <#%=User.first.posts%>
