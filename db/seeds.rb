@@ -13,7 +13,7 @@ user1 = User.create(name: "Bill", email:"Bill@ga.co", password:"chicken", passwo
 
 user2 = User.create(name: "admin", email:"admin@ga.co", password:"password", password_confirmation: "password" )
 
-user3 = User.create(name: "Bj", email:"Bj@ga.co", password:"goat", password_confirmation: "goat" )
+user3 = User.create(name: "Bj", email:"Bj@ga.co", password:"cat", password_confirmation: "cat" )
 
 p user1.password_digest
 
