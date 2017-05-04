@@ -1,9 +1,11 @@
 <h1>Image Gallery</h1>
-<% @posts.each do |post| %>
-  <p>
-    <%= post.description %>
-    </p>
+  <% @posts.each do |post| %>
     <p>
-    <%= image_tag(post.image) %>
-  </p>
-<% end %>
+      <%= post.description %>
+      </p>
+
+      <p>
+      <%= image_tag post.image, class: "responsive-img circle"%>
+    </p>
+    </div>
+  <% end %>

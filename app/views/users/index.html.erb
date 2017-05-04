@@ -1,9 +1,10 @@
 
+<p>This is the index page</p>
 
 
- <p><%= @user.name %> post </p>
 
- <#% @user.posts.each do |post|%>
-   <#%= post.description %>
- <#% end %>
- <#%=User.first.posts%>
+ <% @all_users.each do |user| %>
+
+   Name: <%= user.name %>
+
+   <%end %>

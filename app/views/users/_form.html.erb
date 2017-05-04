@@ -1,15 +1,26 @@
+<div class="container">
 
-
-<%= form_for @user do |f| %>
 <p>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true %>
+  <strong>
+  miniFlikr is a photo sharaing app where users can upload pictures and can see pictures uploaded by others
+  </strong>
 </p>
-<%= f.label :email %>
-<%= f.text_field :email, required: true %>
-</p>
-<%= f.label :password %>
-<%= f.password_field :password, required: true %>
-</p>
-<%= f.submit %>
-<% end %>
+
+
+
+
+  <%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </p>
+  <%= f.label :email %>
+  <%= f.text_field :email, required: true %>
+  </p>
+  <%= f.label :password %>
+  <%= f.password_field :password, required: true %>
+  </p>
+  <%= f.submit "Submit", :class=>"btn waves-effect waves-light"%>
+  <% end %>
+
+</div>
