@@ -20,8 +20,6 @@ class PostsController < ApplicationController
       #redirect to "/post/#{post.id}"
   end
 
-
-
   def new
     @post = Post.new
   end
@@ -35,5 +33,11 @@ class PostsController < ApplicationController
       params.required(:post).permit(:image, :description)
     end
 
+    def authorise
+      unless @current_user
+        flash[:error] = "You need to be logged in for that"
+        redirect_to "/login"
+      end
+    end
 
 end

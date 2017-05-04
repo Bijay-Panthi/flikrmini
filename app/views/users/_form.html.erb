@@ -1,24 +1,45 @@
+<% unless @user.errors.full_messages.empty? %>
+
+        <% @user.errors.full_messages.each do |msg| %>
+          <p>
+            <%= msg %>
+          </p>
+        <% end %>
+
+      <% end %>
+<style>
+
+strong {
+  font-size: 14px;
+  font-family:monospace;
+}
+</style>
+
 <div class="container">
 
-<p>
+
+<p class="strong">
   <strong>
-  miniFlikr is a photo sharaing app where users can upload pictures and can see pictures uploaded by others
+  miniFlikr is a photo sharaing app where users can upload pictures and can see pictures uploaded by others. Please sign up to upload pictures.
   </strong>
 </p>
-
-
-
 
   <%= form_for @user do |f| %>
   <p>
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
   </p>
+  <p>
   <%= f.label :email %>
   <%= f.text_field :email, required: true %>
   </p>
+  <p>
   <%= f.label :password %>
   <%= f.password_field :password, required: true %>
+  </p>
+  <p>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, required: true %>
   </p>
   <%= f.submit "Submit", :class=>"btn waves-effect waves-light"%>
   <% end %>

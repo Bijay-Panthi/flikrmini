@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit
+    @user = User.find_by(id: params["id"])
+  end
+
   def create
       @user = User.new(user_params)
       if @user.save
@@ -23,9 +27,18 @@ class UsersController < ApplicationController
   end
 
 
-  def edit
-    @user = User.find_by(id: params["id"])
+  def update
+    user = User.find_by(id: params["id"])
+    user.update( user_params() )
+    
+    redirect_to "/users/#{user.id}"
+
   end
+
+
+
+
+
 
   private
   def user_params

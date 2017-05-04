@@ -1,10 +1,15 @@
 
-<p>This is the index page</p>
+<p>User's Page</p>
+
 
 
 
  <% @all_users.each do |user| %>
 
-   Name: <%= user.name %>
+  <ul>
+
+    <li>Name: <%= user.name %></li>
+    <li>Email <%= user.email %></li>
+</p>
 
    <%end %>

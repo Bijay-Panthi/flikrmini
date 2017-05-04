@@ -1,4 +1,17 @@
-<h1>Image Gallery</h1>
+<div class="container">
+  <div class="row">
+    <div class="col s12 #ffffff white">
+      <div class="center">
+
+
+<h4>Image Gallery</h1>
+<% if !@current_user%>
+
+<p>
+  Please sign in to upload images
+</p>
+
+<% end %>
   <% @posts.each do |post| %>
     <p>
       <%= post.description %>
@@ -7,5 +20,10 @@
       <p>
       <%= image_tag post.image, class: "responsive-img circle"%>
     </p>
-    </div>
+
   <% end %>
+
+</div>
+</div>
+</div>
+</div>
