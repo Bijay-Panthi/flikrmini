@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   @post = post.find(params[:id])
   @post.destroy
   redirect_to post_path(post)
-end
+  end
 
   private
     def post_params

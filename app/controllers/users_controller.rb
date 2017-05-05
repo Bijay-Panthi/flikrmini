@@ -34,18 +34,9 @@ class UsersController < ApplicationController
     redirect_to "/users/#{user.id}"
   end
 
-
-
-
-
-
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-
-
-
-
 
 end
